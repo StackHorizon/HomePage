@@ -1,0 +1,76 @@
+@import "tailwindcss";
+/* src/components/style.css */
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+h1 {
+    font-weight: 500;
+}
+
+h2 {
+    font-weight: 400;
+}
+
+.info-box {
+    border-left: 4px solid #4a6cf7;
+}
+
+.info-box li::before {
+    content: "✓";
+    color: #4a6cf7;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.hover-pulse:hover {
+    animation: pulse 2s infinite;
+}
+
+.pastel-blue {
+    background-color: #a8d8ea;
+}
+
+.pastel-green {
+    background-color: #b8e994;
+}
+
+.pastel-yellow {
+    background-color: #f6e58d;
+}
+
+.pastel-pink {
+    background-color: #f3a683;
+}
+
+.clicked-blue {
+    background-color: #4a6cf7;
+    color: #ffffff;
+}
+
+.clicked-green {
+    background-color: #34d399;
+    color: #ffffff;
+}
+
+.clicked-yellow {
+    background-color: #fbbf24;
+    color: #ffffff;
+}
+
+.clicked-pink {
+    background-color: #ec4899;
+    color: #ffffff;
+}

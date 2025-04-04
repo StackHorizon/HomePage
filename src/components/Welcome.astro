@@ -1,0 +1,168 @@
+---
+import "./style.css";
+import "../assets/stack.svg";
+---
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+          rel="stylesheet">
+    <title>StackHorizon</title>
+</head>
+<nav class="bg-white py-4">
+    <div class="container mx-auto px-8 max-w-7xl">
+        <div class="flex items-center">
+            <a href="/" class="block">
+                <img src='' alt="Logo Aziendale" class="h-10">
+            </a>
+        </div>
+    </div>
+</nav>
+<div class="container mx-auto pl-10 pr-0 py-12 max-w-7xl">
+    <div class="flex flex-col md:flex-row gap-10 items-center">
+        <div class="w-full md:w-1/2 space-y-6">
+            <div class="space-y-2">
+                <h1 class="text-5xl md:text-6xl text-black mb-2">
+                    Pensa meno.<br class="mb-4">
+                    Sogna di più.
+                </h1>
+                <h2 class="mt-15 md:text-2xl text-black max-w-lg">
+                    StackHorizon aiuta a creare esperienze, idee e sogni, semplificandoli</h2>
+            </div>
+
+            <button
+                    id="iniziaNowBtn"
+                    class=" mt-8 px-6 py-3 bg-black text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover-pulse">
+                Inizia ora il viaggio
+            </button>
+        </div>
+
+        <div class="w-full md:w-1/@2">
+        </div>
+    </div>
+</div>
+<div class="container mx-auto px-8 py-10 max-w-7xl">
+    <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+        <button data-button="servizi"
+                class="nav-button active clicked-blue flex-1 px-6 py-3 bg-white text-black border-2 border-gray-200 font-medium rounded-lg hover:bg-gray-50 focus:bg-black focus:text-white transition-all duration-300">
+            Servizi
+        </button>
+        <button data-button="progetti"
+                class="nav-button flex-1 px-6 py-3 bg-white text-black border-2 border-gray-200 font-medium rounded-lg hover:bg-gray-50 focus:bg-black focus:text-white transition-all duration-300">
+            Progetti
+        </button>
+        <button data-button="idea"
+                class="nav-button flex-1 px-6 py-3 bg-white text-black border-2 border-gray-200 font-medium rounded-lg hover:bg-gray-50 focus:bg-black focus:text-white transition-all duration-300">
+            L'idea
+        </button>
+        <button data-button="contatti"
+                class="nav-button flex-1 px-6 py-3 bg-white text-black border-2 border-gray-200 font-medium rounded-lg hover:bg-gray-50 focus:bg-black focus:text-white transition-all duration-300">
+            Contatti
+        </button>
+    </div>
+</div>
+
+<script>
+    import {gsap} from 'gsap';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const buttons = document.querySelectorAll('.nav-button');
+        let activeButton = document.querySelector('.nav-button.active');
+        let isAnimating = false;
+        let animationTimeline = null;
+
+        // Imposta lo stile iniziale del pulsante attivo
+        if (activeButton && activeButton.dataset.button === 'servizi') {
+            gsap.set(activeButton, {
+                backgroundColor: '#4a6cf7',
+                color: '#ffffff',
+                borderColor: '#4a6cf7'
+            });
+        }
+
+        buttons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault(); // Previene comportamenti indesiderati
+
+                // Non procedere se il pulsante è già attivo o se un'animazione è in corso
+                if (button === activeButton || isAnimating) {
+                    return;
+                }
+
+                // Impostiamo subito lo stato di animazione
+                isAnimating = true;
+
+                // Interrompi eventuali animazioni in corso
+                if (animationTimeline) {
+                    animationTimeline.kill();
+                }
+
+                // Rimuovi le classi di colore cliccato dai pulsanti inattivi
+                buttons.forEach(btn => {
+                    btn.classList.remove('clicked-blue', 'clicked-green', 'clicked-yellow', 'clicked-pink');
+                });
+
+                // Determina il colore da utilizzare nell'animazione
+                let backgroundColor, borderColor;
+                if (button.dataset.button === 'servizi') {
+                    button.classList.add('clicked-blue');
+                    backgroundColor = '#4a6cf7';
+                    borderColor = '#4a6cf7';
+                } else if (button.dataset.button === 'progetti') {
+                    button.classList.add('clicked-green');
+                    backgroundColor = '#34d399';
+                    borderColor = '#34d399';
+                } else if (button.dataset.button === 'idea') {
+                    button.classList.add('clicked-yellow');
+                    backgroundColor = '#fbbf24';
+                    borderColor = '#fbbf24';
+                } else if (button.dataset.button === 'contatti') {
+                    button.classList.add('clicked-pink');
+                    backgroundColor = '#ec4899';
+                    borderColor = '#ec4899';
+                }
+
+                // Aggiungi/rimuovi la classe active prima dell'animazione
+                activeButton.classList.remove('active');
+                button.classList.add('active');
+                activeButton = button;
+
+                // Raccolgo tutti i bottoni inattivi
+                const inactiveButtons = [...buttons].filter(btn => btn !== button);
+
+                // Creo una timeline unificata per tutte le animazioni
+                animationTimeline = gsap.timeline({
+                    onComplete: () => {
+                        // Riattiva i click solo quando tutte le animazioni sono complete
+                        isAnimating = false;
+                    }
+                });
+
+                // Animazione del bottone che diventa attivo
+                animationTimeline.to(button, {
+                    backgroundColor: backgroundColor,
+                    color: '#ffffff',
+                    scale: 1.1,
+                    boxShadow: '0 10px 20px -3px rgba(0,0,0,0.1), 0 4px 8px -2px rgba(0,0,0,0.05)',
+                    borderColor: borderColor,
+                    duration: 0.2,
+                    ease: 'power1.out'
+                }, 0);
+
+                // Animazione staggered dei bottoni inattivi
+                animationTimeline.to(inactiveButtons, {
+                    backgroundColor: '#ffffff',
+                    color: '#000000',
+                    scale: 1,
+                    boxShadow: 'none',
+                    borderColor: '#e5e7eb',
+                    duration: 0.15,
+                    ease: 'power1.inOut',
+                    stagger: 0.05
+                }, 0.05);
+            });
+        });
+    });
+</script>
+
