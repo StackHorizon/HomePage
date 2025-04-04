@@ -1,0 +1,170 @@
+    <div class="container mx-auto px-8">
+        <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-12">Contattaci</h2>
+
+        <!-- Informazioni di contatto -->
+        <div class="grid md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Dettagli di contatto</h3>
+                <ul class="space-y-3 text-lg text-gray-700">
+                    <li>
+                        <strong>Cellulare:</strong> <a href="tel:+393890979120" class="text-indigo-600 hover:text-indigo-800">389 097 9120</a>
+                    </li>
+                    <li>
+                        <strong>Email:</strong> <a href="stackhorizonmain@gmail.com" class="text-indigo-600 hover:text-indigo-800">stackhorizonmain@gmail.com</a>
+                    </li>
+                    <li>
+                        <strong>Orari di apertura:</strong>
+                        <ul class="list-disc ml-6">
+                            <li>Lunedì - Venerdì: 09:00 - 18:00</li>
+                            <li>Sabato: 09:00 - 13:00</li>
+                            <li>Domenica: Chiuso</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Form di contatto -->
+            <div>
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Modulo di contatto</h3>
+                <form action="/submit-form" method="POST" class="space-y-6">
+                    <div class="flex flex-col">
+                        <label for="nome" class="text-lg text-gray-700 mb-2">Nome <span class="text-red-500">*</span></label>
+                        <input type="text" id="nome" name="nome" required class="px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-500">
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label for="cellulare" class="text-lg text-gray-700 mb-2">Cellulare <span class="text-red-500">*</span></label>
+                        <input type="tel" id="cellulare" name="cellulare" required class="px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-500">
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label for="email" class="text-lg text-gray-700 mb-2">Email <span class="text-red-500">*</span></label>
+                        <input type="email" id="email" name="email" required class="px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-500">
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label for="descrizione" class="text-lg text-gray-700 mb-2">Descrizione <span class="text-red-500">*</span></label>
+                        <textarea id="descrizione" name="descrizione" required rows="4" class="px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-500"></textarea>
+                    </div>
+
+                    <button type="submit" class="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                        Invia Messaggio
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<style>/* Sezione Contatti */
+#contatti {
+    background-color: #f4f7fc; /* Colore di sfondo leggero */
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    font-family: 'Inter', sans-serif;
+}
+
+#contatti h2 {
+    font-size: 2.5rem; /* Più grande per attirare l'attenzione */
+    color: #333;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+}
+
+#contatti .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#contatti .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: 0 2rem;
+}
+
+#contatti .grid div {
+    display: flex;
+    flex-direction: column;
+}
+
+#contatti .grid h3 {
+    font-size: 1.8rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+#contatti .grid ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#contatti .grid ul li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+#contatti .grid a {
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+#contatti .grid a:hover {
+    color: #3b7db3;
+}
+
+form {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1.5rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+    outline: none;
+}
+
+form button {
+    padding: 15px 30px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #357ab7;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    #contatti .grid {
+        grid-template-columns: 1fr;
+    }
+
+    form {
+        padding: 2rem;
+    }
+}
+</style>

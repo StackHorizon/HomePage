@@ -2,6 +2,7 @@
 import "./style.css";
 import "../assets/stack.svg";
 import Servizi from "./Servizi.astro";
+import Contatti from "./Contatti.astro";
 ---
 <!DOCTYPE html>
 <html lang="it">
@@ -74,72 +75,15 @@ import Servizi from "./Servizi.astro";
 
 <!-- Servizi Section -->
 <div id="servizi" class="content-section hidden">
-     <Servizi />
-<!--
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-        <div class="service-card hover:bg-blue-100 transition-all duration-300 p-6 rounded-lg shadow-lg text-center">
-            <div class="mb-4">
-                <i class="fas fa-cogs text-4xl text-blue-500"></i>
-            </div>
-            <h4 class="text-xl font-semibold mb-2">Sviluppo di Programmi</h4>
-            <p class="text-gray-600">Creiamo software su misura per soddisfare le necessità della tua azienda, dai programmi desktop alle soluzioni più complesse.</p>
-        </div>
-
-
-        <div class="service-card hover:bg-green-100 transition-all duration-300 p-6 rounded-lg shadow-lg text-center">
-            <div class="mb-4">
-                <i class="fas fa-laptop-code text-4xl text-green-500"></i>
-            </div>
-            <h4 class="text-xl font-semibold mb-2">Siti Web</h4>
-            <p class="text-gray-600">Progettiamo e sviluppiamo siti web responsivi, moderni e user-friendly per rappresentare al meglio la tua attività online.</p>
-        </div>
-
-
-        <div class="service-card hover:bg-yellow-100 transition-all duration-300 p-6 rounded-lg shadow-lg text-center">
-            <div class="mb-4">
-                <i class="fas fa-database text-4xl text-yellow-500"></i>
-            </div>
-            <h4 class="text-xl font-semibold mb-2">Database</h4>
-            <p class="text-gray-600">Gestiamo e ottimizziamo database complessi per garantire l'integrità e la sicurezza dei tuoi dati aziendali.</p>
-        </div>
-
-
-        <div class="service-card hover:bg-pink-100 transition-all duration-300 p-6 rounded-lg shadow-lg text-center">
-            <div class="mb-4">
-                <i class="fas fa-mobile-alt text-4xl text-pink-500"></i>
-            </div>
-            <h4 class="text-xl font-semibold mb-2">Applicazioni</h4>
-            <p class="text-gray-600">Sviluppiamo applicazioni personalizzate per dispositivi mobili e desktop, migliorando l'esperienza utente.</p>
-        </div>
-
-        <div class="service-card hover:bg-purple-100 transition-all duration-300 p-6 rounded-lg shadow-lg text-center">
-            <div class="mb-4">
-                <i class="fas fa-wrench text-4xl text-purple-500"></i>
-            </div>
-            <h4 class="text-xl font-semibold mb-2">Manutenzione</h4>
-            <p class="text-gray-600">Offriamo servizi di manutenzione continua per garantire che il tuo software, sito web e database siano sempre aggiornati e funzionanti.</p>
-        </div>
-
-        <div class="service-card hover:bg-teal-100 transition-all duration-300 p-6 rounded-lg shadow-lg text-center">
-            <div class="mb-4">
-                <i class="fas fa-briefcase text-4xl text-teal-500"></i>
-            </div>
-            <h4 class="text-xl font-semibold mb-2">Aiuto ad Aziende</h4>
-            <p class="text-gray-600">Offriamo consulenza personalizzata per supportare le aziende nelle loro esigenze IT, ottimizzando i processi aziendali.</p>
-        </div>
-
-        <div class="service-card hover:bg-red-100 transition-all duration-300 p-6 rounded-lg shadow-lg text-center">
-            <div class="mb-4">
-                <i class="fas fa-lightbulb text-4xl text-red-500"></i>
-            </div>
-            <h4 class="text-xl font-semibold mb-2">Consulenza Informatica</h4>
-            <p class="text-gray-600">Offriamo consulenza tecnica per ottimizzare le infrastrutture IT e migliorare l'efficienza operativa della tua azienda.</p>
-        </div>
-    </div>-->
+    <Servizi />
 
 </div>
-
+<div id="progetti" class="content-section hidden">
+    i nostri progetti
+</div>
+<div id="contatti" class="content-section hidden bg-gray-50 py-16">
+    <Contatti />
+</div>
 <script>
     window.onload = () =>{
         document.getElementById('servizi').classList.remove('hidden');
@@ -152,6 +96,21 @@ import Servizi from "./Servizi.astro";
             const sections = document.querySelectorAll('.content-section');
             sections.forEach(section => section.classList.add('hidden'));
             document.getElementById('servizi').classList.remove('hidden');
+        });
+
+        // Sezione dinamica dei Progetti
+        const buttonProgetti = document.querySelector('[data-button="progetti"]');
+        buttonProgetti.addEventListener('click', () => {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.add('hidden'));
+            document.getElementById('progetti').classList.remove('hidden');
+        });
+        // Sezione dinamica dei Progetti
+        const buttonContatti = document.querySelector('[data-button="contatti"]');
+        buttonContatti.addEventListener('click', () => {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.add('hidden'));
+            document.getElementById('contatti').classList.remove('hidden');
         });
     });
 </script>
