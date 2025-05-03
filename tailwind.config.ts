@@ -163,7 +163,19 @@ export default {
 					'20%, 40%, 60%, 80%': {
 						transform: 'translate(1px)'
 					}
-				}
+				},
+        'spin-slow': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
+				},
+        'gradient-x': {
+					'0%, 100%': {
+						'background-position': '0% 50%'
+					},
+					'50%': {
+						'background-position': '100% 50%'
+					}
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -175,13 +187,20 @@ export default {
 				'float': 'float 6s infinite ease-in-out',
 				// New street-style animations
 				'street-skew': 'street-skew 3s ease-in-out infinite',
-				'street-vibrate': 'street-vibrate 0.8s linear infinite'
+				'street-vibrate': 'street-vibrate 0.8s linear infinite',
+        'spin-slow': 'spin-slow 10s linear infinite',
+        'gradient-x': 'gradient-x 5s ease infinite'
 			},
 			backgroundImage: {
 				'gradient-street': 'linear-gradient(to right, #9b87f5, #D946EF)',
 				'gradient-orange': 'linear-gradient(to right, #F97316, #FB923C)',
-				'street-grid': 'repeating-linear-gradient(to right, rgba(255,255,255,0.03), rgba(255,255,255,0.03) 1px, transparent 1px, transparent 20px)'
-			}
+        'gradient-neon': 'linear-gradient(to right, #39FF14, #00FF99)',
+				'street-grid': 'repeating-linear-gradient(to right, rgba(255,255,255,0.03), rgba(255,255,255,0.03) 1px, transparent 1px, transparent 20px)',
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+			},
+      backgroundSize: {
+        'size-200': '200% 200%',
+      }
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

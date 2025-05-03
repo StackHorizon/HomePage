@@ -52,12 +52,32 @@
     @apply backdrop-blur-md bg-black/40 border border-white/10 shadow-lg;
   }
   
+  .glass-neon {
+    @apply backdrop-blur-md bg-black/30 border border-street-neon/20 shadow-lg;
+  }
+  
+  .glass-red {
+    @apply backdrop-blur-md bg-black/30 border border-street-red/20 shadow-lg;
+  }
+  
+  .glass-yellow {
+    @apply backdrop-blur-md bg-black/30 border border-street-yellow/20 shadow-lg;
+  }
+  
   .text-gradient {
     @apply bg-gradient-to-r from-street-purple to-street-pink bg-clip-text text-transparent;
   }
   
   .text-gradient-orange {
     @apply bg-gradient-to-r from-street-orange to-amber-400 bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-neon {
+    @apply bg-gradient-to-r from-street-neon to-green-400 bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-rainbow {
+    @apply bg-gradient-to-r from-street-red via-street-yellow to-street-neon bg-clip-text text-transparent;
   }
   
   .mask-fade-out {
@@ -83,6 +103,46 @@
       rgba(255,255,255,0.06) 10px,
       rgba(255,255,255,0.06) 20px
     );
+  }
+  
+  .neon-border {
+    box-shadow: 0 0 5px theme('colors.street.neon'),
+                0 0 10px theme('colors.street.neon'),
+                inset 0 0 5px theme('colors.street.neon');
+    border-color: theme('colors.street.neon');
+  }
+  
+  .red-border {
+    box-shadow: 0 0 5px theme('colors.street.red'),
+                0 0 10px theme('colors.street.red'),
+                inset 0 0 5px theme('colors.street.red');
+    border-color: theme('colors.street.red');
+  }
+  
+  .brick-pattern {
+    background-image: 
+      repeating-linear-gradient(
+        45deg,
+        rgba(255,255,255,0.05) 0,
+        rgba(255,255,255,0.05) 2px,
+        transparent 2px,
+        transparent 8px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        rgba(255,255,255,0.05) 0,
+        rgba(255,255,255,0.05) 2px,
+        transparent 2px,
+        transparent 8px
+      );
+  }
+  
+  .dots-pattern {
+    background-image: radial-gradient(
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px
+    );
+    background-size: 10px 10px;
   }
 }
 
@@ -122,4 +182,94 @@
 
 .street-wobble {
   animation: street-wobble 6s ease-in-out infinite;
+}
+
+@keyframes neon-pulse {
+  0%, 100% { 
+    opacity: 1;
+    text-shadow: 0 0 5px rgba(57, 255, 20, 0.8),
+                0 0 10px rgba(57, 255, 20, 0.5);
+  }
+  50% { 
+    opacity: 0.8;
+    text-shadow: 0 0 15px rgba(57, 255, 20, 0.8),
+                0 0 20px rgba(57, 255, 20, 0.7);
+  }
+}
+
+.neon-pulse {
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+@keyframes float-rotate {
+  0% { 
+    transform: translateY(0) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-10px) rotate(5deg); 
+  }
+  100% { 
+    transform: translateY(0) rotate(0deg); 
+  }
+}
+
+.float-rotate {
+  animation: float-rotate 6s ease-in-out infinite;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0)
+  }
+  20% {
+    transform: translate(-2px, 2px)
+  }
+  40% {
+    transform: translate(-2px, -2px)
+  }
+  60% {
+    transform: translate(2px, 2px)
+  }
+  80% {
+    transform: translate(2px, -2px)
+  }
+  100% {
+    transform: translate(0)
+  }
+}
+
+.glitch {
+  animation: glitch 1s linear infinite;
+  animation-play-state: paused;
+}
+
+.glitch:hover {
+  animation-play-state: running;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* Ripple animation */
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(155, 135, 245, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(155, 135, 245, 0);
+  }
+}
+
+.ripple {
+  animation: ripple 1.5s infinite;
 }
