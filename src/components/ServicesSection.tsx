@@ -31,7 +31,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         <h3 className="text-xl font-bold mb-3">{title}</h3>
         <p className="text-gray-400 mb-6">{description}</p>
         <Button variant="ghost" className={`text-${color} hover:bg-${color}/10 p-0 flex items-center gap-2`}>
-          Learn More
+          Scopri di più
           <span className="w-4 h-0.5 bg-current transition-all group-hover:w-6"></span>
         </Button>
       </div>
@@ -44,32 +44,32 @@ const ServicesSection: React.FC = () => {
   const services = [
     {
       icon: <Building className="h-6 w-6" />,
-      title: "Website Development",
-      description: "Custom websites built with street style and urban aesthetics.",
+      title: "Sviluppo Web",
+      description: "Siti web personalizzati costruiti con stile urbano ed estetica moderna.",
       color: "street-purple"
     },
     {
       icon: <Car className="h-6 w-6" />,
-      title: "Fast Hosting",
-      description: "Lightning-fast hosting services with global edge presence.",
+      title: "Hosting Veloce",
+      description: "Servizi di hosting ultra-rapidi con presenza globale.",
       color: "street-orange"
     },
     {
       icon: <MapPin className="h-6 w-6" />,
-      title: "API Integration",
-      description: "Seamless API connections with your existing infrastructure.",
+      title: "Integrazione API",
+      description: "Connessioni API perfette con la tua infrastruttura esistente.",
       color: "street-blue"
     },
     {
       icon: <SignpostBig className="h-6 w-6" />,
-      title: "Domain Services",
-      description: "Register and manage your domain with our urban platform.",
+      title: "Servizi Domini",
+      description: "Registra e gestisci il tuo dominio con la nostra piattaforma urbana.",
       color: "street-pink"
     },
     {
       icon: <BusFront className="h-6 w-6" />,
-      title: "Cloud Solutions",
-      description: "Scalable cloud services for growing businesses.",
+      title: "Soluzioni Cloud",
+      description: "Servizi cloud scalabili per aziende in crescita.",
       color: "street-cyan"
     },
   ];
@@ -85,11 +85,11 @@ const ServicesSection: React.FC = () => {
       <div className="container">
         <div className="text-center mb-16 opacity-0 animate-fade-in">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Our <span className="text-gradient">Services</span>
+            I Nostri <span className="text-gradient">Servizi</span>
           </h2>
           <p className="text-gray-400 md:text-lg max-w-2xl mx-auto">
-            Premium development and hosting services with an urban edge.
-            Built for speed, reliability and style.
+            Servizi premium di sviluppo e hosting con un tocco urbano.
+            Costruiti per velocità, affidabilità e stile.
           </p>
         </div>
 

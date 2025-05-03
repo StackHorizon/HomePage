@@ -14,17 +14,17 @@ const Footer: React.FC = () => {
               <div className="bg-street-purple rounded-lg p-1.5 transition-all duration-300 group-hover:rotate-6">
                 <Building2 className="h-5 w-5" />
               </div>
-              <span className="font-bold text-xl text-gradient">StreetDev</span>
+              <span className="font-bold text-xl text-gradient">Stack Horizon</span>
             </a>
             <p className="text-gray-400 text-sm">
-              Development and hosting with urban style and street reliability.
+              Sviluppo e hosting con stile urbano e affidabilità stradale.
             </p>
           </div>
           
           <div>
-            <h4 className="font-bold text-lg mb-4">Services</h4>
+            <h4 className="font-bold text-lg mb-4">Servizi</h4>
             <ul className="space-y-2 text-gray-400">
-              {["Web Development", "Cloud Hosting", "API Integration", "Domain Services", "Support"].map((item) => (
+              {["Sviluppo Web", "Cloud Hosting", "Integrazione API", "Servizi Domini", "Supporto"].map((item) => (
                 <li key={item}>
                   <a href="#" className="hover:text-white transition-colors">
                     {item}
@@ -35,9 +35,9 @@ const Footer: React.FC = () => {
           </div>
           
           <div>
-            <h4 className="font-bold text-lg mb-4">Company</h4>
+            <h4 className="font-bold text-lg mb-4">Azienda</h4>
             <ul className="space-y-2 text-gray-400">
-              {["About Us", "Careers", "Blog", "Press", "Contact"].map((item) => (
+              {["Chi Siamo", "Carriera", "Blog", "Press", "Contatti"].map((item) => (
                 <li key={item}>
                   <a href="#" className="hover:text-white transition-colors">
                     {item}
@@ -48,9 +48,9 @@ const Footer: React.FC = () => {
           </div>
           
           <div>
-            <h4 className="font-bold text-lg mb-4">Legal</h4>
+            <h4 className="font-bold text-lg mb-4">Legale</h4>
             <ul className="space-y-2 text-gray-400">
-              {["Terms", "Privacy", "Cookies", "Licenses", "Settings"].map((item) => (
+              {["Termini", "Privacy", "Cookies", "Licenze", "Impostazioni"].map((item) => (
                 <li key={item}>
                   <a href="#" className="hover:text-white transition-colors">
                     {item}
@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
         
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-400">
-            © {currentYear} StreetDev. All rights reserved.
+            © {currentYear} Stack Horizon. Tutti i diritti riservati.
           </p>
           <div className="flex space-x-6">
             {["Twitter", "Facebook", "Instagram", "Github"].map((social) => (

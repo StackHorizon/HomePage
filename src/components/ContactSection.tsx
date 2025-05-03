@@ -18,30 +18,30 @@ const ContactSection: React.FC = () => {
           <div className="space-y-8">
             <div className="opacity-0 animate-fade-in">
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                Get In <span className="text-gradient">Touch</span>
+                Mettiti in <span className="text-gradient">Contatto</span>
               </h2>
               <p className="text-gray-300 max-w-lg">
-                Ready to bring your digital presence to the streets? Contact us for development and hosting solutions with urban style.
+                Pronto a portare la tua presenza digitale nelle strade? Contattaci per soluzioni di sviluppo e hosting con stile urbano.
               </p>
             </div>
             
             <div className="grid md:grid-cols-2 gap-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
               <div className="glass p-6 rounded-xl hover:bg-white/20 transition-colors">
-                <h3 className="text-xl font-bold mb-2">Email Us</h3>
-                <p className="text-street-purple">contact@streetdev.com</p>
+                <h3 className="text-xl font-bold mb-2">Email</h3>
+                <p className="text-street-purple">contatti@stackhorizon.it</p>
               </div>
               <div className="glass p-6 rounded-xl hover:bg-white/20 transition-colors">
-                <h3 className="text-xl font-bold mb-2">Call Us</h3>
-                <p className="text-street-orange">+1 (234) 567-8900</p>
+                <h3 className="text-xl font-bold mb-2">Telefono</h3>
+                <p className="text-street-orange">+39 123 456 7890</p>
               </div>
             </div>
             
             <div className="opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <h3 className="text-xl font-bold mb-4">Office Location</h3>
+              <h3 className="text-xl font-bold mb-4">Sede Centrale</h3>
               <address className="not-italic text-gray-300">
-                123 Urban Avenue<br />
-                Street District, SD 12345<br />
-                United States
+                Via Urbana, 123<br />
+                20100 Milano<br />
+                Italia
               </address>
             </div>
           </div>
@@ -50,52 +50,52 @@ const ContactSection: React.FC = () => {
             <form className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-1">
-                  Your Name
+                  Il Tuo Nome
                 </label>
                 <Input
                   id="name"
-                  placeholder="John Doe"
+                  placeholder="Mario Rossi"
                   className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
                 />
               </div>
               
               <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-1">
-                  Email Address
+                  Indirizzo Email
                 </label>
                 <Input
                   id="email"
                   type="email"
-                  placeholder="john@example.com"
+                  placeholder="mario@esempio.it"
                   className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
                 />
               </div>
               
               <div>
                 <label htmlFor="subject" className="block text-sm font-medium mb-1">
-                  Subject
+                  Oggetto
                 </label>
                 <Input
                   id="subject"
-                  placeholder="How can we help?"
+                  placeholder="Come possiamo aiutarti?"
                   className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
                 />
               </div>
               
               <div>
                 <label htmlFor="message" className="block text-sm font-medium mb-1">
-                  Message
+                  Messaggio
                 </label>
                 <Textarea
                   id="message"
                   rows={4}
-                  placeholder="Tell us about your project..."
+                  placeholder="Raccontaci del tuo progetto..."
                   className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
                 />
               </div>
               
               <Button className="w-full bg-gradient-street hover:bg-street-purple/80">
-                Send Message
+                Invia Messaggio
               </Button>
             </form>
           </div>

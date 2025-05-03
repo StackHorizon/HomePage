@@ -6,18 +6,18 @@ const FeaturesSection: React.FC = () => {
   const features = [
     {
       icon: <SignpostBig className="h-8 w-8 text-street-purple" />,
-      title: "Urban Infrastructure",
-      description: "Built on the latest technology stack with city-grade reliability and performance.",
+      title: "Infrastruttura Urbana",
+      description: "Costruita sulle più recenti tecnologie con affidabilità e prestazioni di livello cittadino.",
     },
     {
       icon: <TrafficCone className="h-8 w-8 text-street-orange" />,
-      title: "Street Smart Security",
-      description: "Advanced security protocols protecting your applications from all threats.",
+      title: "Sicurezza Intelligente",
+      description: "Protocolli di sicurezza avanzati che proteggono le tue applicazioni da tutte le minacce.",
     },
     {
       icon: <Flag className="h-8 w-8 text-street-blue" />,
-      title: "Global Reach",
-      description: "Deploy to multiple regions with a single click for worldwide access.",
+      title: "Portata Globale",
+      description: "Distribuzione in più regioni con un solo clic per un accesso mondiale.",
     },
   ];
 
@@ -40,10 +40,10 @@ const FeaturesSection: React.FC = () => {
           <div className="glass px-8 py-16 rounded-2xl">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-5xl font-bold mb-6 opacity-0 animate-fade-in">
-                Street <span className="text-gradient-orange">Features</span>
+                Le Nostre <span className="text-gradient-orange">Funzionalità</span>
               </h2>
               <p className="text-gray-300 md:text-lg opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-                Built with urban resilience and cutting-edge technology
+                Costruiti con resilienza urbana e tecnologia all'avanguardia
               </p>
             </div>
 
@@ -66,15 +66,15 @@ const FeaturesSection: React.FC = () => {
             <div className="mt-16 pt-8 border-t border-white/10 grid md:grid-cols-3 gap-8 text-center">
               <div className="opacity-0 animate-fade-in" style={{ animationDelay: "0.5s" }}>
                 <h4 className="text-4xl font-bold text-street-purple mb-2">99.9%</h4>
-                <p className="text-gray-400">Uptime Guarantee</p>
+                <p className="text-gray-400">Garanzia di Uptime</p>
               </div>
               <div className="opacity-0 animate-fade-in" style={{ animationDelay: "0.6s" }}>
                 <h4 className="text-4xl font-bold text-street-orange mb-2">24/7</h4>
-                <p className="text-gray-400">Technical Support</p>
+                <p className="text-gray-400">Supporto Tecnico</p>
               </div>
               <div className="opacity-0 animate-fade-in" style={{ animationDelay: "0.7s" }}>
                 <h4 className="text-4xl font-bold text-street-blue mb-2">50+</h4>
-                <p className="text-gray-400">Global Locations</p>
+                <p className="text-gray-400">Sedi Globali</p>
               </div>
             </div>
           </div>
