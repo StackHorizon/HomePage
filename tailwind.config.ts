@@ -63,14 +63,17 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Street theme colors
+				// Enhanced Street theme colors
 				street: {
 					purple: '#9b87f5',
 					orange: '#F97316',
 					blue: '#1EAEDB',
 					cyan: '#33C3F0',
 					pink: '#D946EF',
-					dark: '#1A1F2C'
+					dark: '#1A1F2C',
+                    neon: '#39FF14',
+                    red: '#FF3131',
+                    yellow: '#FDDA0D'
 				}
 			},
 			borderRadius: {
@@ -140,6 +143,26 @@ export default {
 					'50%': {
 						transform: 'translateY(-10px)'
 					}
+				},
+				// New street-style animations
+				'street-skew': {
+					'0%, 100%': {
+						transform: 'skewX(0deg)'
+					},
+					'50%': {
+						transform: 'skewX(3deg)'
+					}
+				},
+				'street-vibrate': {
+					'0%, 100%': {
+						transform: 'translate(0)'
+					},
+					'10%, 30%, 50%, 70%, 90%': {
+						transform: 'translate(-1px)'
+					},
+					'20%, 40%, 60%, 80%': {
+						transform: 'translate(1px)'
+					}
 				}
 			},
 			animation: {
@@ -149,11 +172,15 @@ export default {
 				'fade-in-right': 'fade-in-right 0.6s ease-out forwards',
 				'fade-in-left': 'fade-in-left 0.6s ease-out forwards',
 				'pulse-slow': 'pulse-slow 3s infinite ease-in-out',
-				'float': 'float 6s infinite ease-in-out'
+				'float': 'float 6s infinite ease-in-out',
+				// New street-style animations
+				'street-skew': 'street-skew 3s ease-in-out infinite',
+				'street-vibrate': 'street-vibrate 0.8s linear infinite'
 			},
 			backgroundImage: {
 				'gradient-street': 'linear-gradient(to right, #9b87f5, #D946EF)',
-				'gradient-orange': 'linear-gradient(to right, #F97316, #FB923C)'
+				'gradient-orange': 'linear-gradient(to right, #F97316, #FB923C)',
+				'street-grid': 'repeating-linear-gradient(to right, rgba(255,255,255,0.03), rgba(255,255,255,0.03) 1px, transparent 1px, transparent 20px)'
 			}
 		}
 	},
