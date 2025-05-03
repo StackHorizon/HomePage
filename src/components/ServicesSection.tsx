@@ -2,7 +2,7 @@
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Building, Car, Road, SignpostBig, BusFront } from "lucide-react";
+import { Building, Car, MapPin, SignpostBig, BusFront } from "lucide-react";
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -55,7 +55,7 @@ const ServicesSection: React.FC = () => {
       color: "street-orange"
     },
     {
-      icon: <Road className="h-6 w-6" />,
+      icon: <MapPin className="h-6 w-6" />,
       title: "API Integration",
       description: "Seamless API connections with your existing infrastructure.",
       color: "street-blue"
