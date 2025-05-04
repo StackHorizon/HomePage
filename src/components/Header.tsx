@@ -34,7 +34,7 @@ const Header: React.FC = () => {
             <Building2 className="h-6 w-6" />
             <div className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-street-neon animate-pulse"></div>
           </div>
-          <span className="font-bold text-xl text-gradient relative">
+          <span className="font-bold text-xl text-gradient whitespace-nowrap relative">
             Stack Horizon
             <Sparkles className="absolute -top-1 -right-6 h-3 w-3 text-street-yellow" />
           </span>

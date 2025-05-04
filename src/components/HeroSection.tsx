@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { CarFront, Flag, Zap, Sparkles, Code, RotateCcw, Hexagon } from "lucide-react";
+import { CarFront, Flag, Zap, Sparkles, Code, RotateCcw, Hexagon, Triangle, Star, Circle, AtomIcon } from "lucide-react";
 
 const HeroSection: React.FC = () => {
   const codeRef = useRef<HTMLDivElement>(null);
@@ -105,7 +105,7 @@ const HeroSection: React.FC = () => {
               <Zap className="h-4 w-4 text-street-yellow animate-pulse" />
             </p>
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-tight opacity-0 animate-fade-in animate-item">
-              <span className="block text-gradient" style={{ fontSize: '5.5rem', letterSpacing: '-1px' }}>Stack Horizon</span>
+              <span className="block text-gradient whitespace-nowrap" style={{ fontSize: '5.5rem', letterSpacing: '-1px' }}>Stack Horizon</span>
               <span className="text-2xl sm:text-3xl md:text-4xl text-street-cyan/90 block mt-2">Sviluppo & Progettazione</span>
               <span className="absolute -ml-8 text-6xl text-street-neon opacity-30 animate-pulse-slow">*</span>
             </h1>
@@ -151,9 +151,10 @@ const HeroSection: React.FC = () => {
         </div>
         
         <div className="relative h-[500px] opacity-0 animate-fade-in animate-item">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="relative w-full h-full">
-              {/* Main image box - Code editor */}
+          {/* Right side animated content - enhanced and properly positioned */}
+          <div className="absolute inset-0 grid grid-cols-6 grid-rows-6 gap-2">
+            {/* Main image box - Code editor - Positioned in the center */}
+            <div className="col-span-4 col-start-2 row-span-3 row-start-2 relative">
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-64 glass rounded-2xl p-1 rotate-6 animate-float">
                 <div className="h-full w-full bg-street-dark/80 rounded-xl overflow-hidden">
                   <div className="h-6 w-full bg-street-dark flex items-center gap-1 px-2">
@@ -172,30 +173,11 @@ const HeroSection: React.FC = () => {
                   </div>
                 </div>
               </div>
-              
-              {/* Spinning code block */}
-              <div className="absolute top-16 right-0 w-24 h-24 glass-dark rounded-lg p-1 animate-spin-slow" style={{ animationDuration: '15s' }}>
-                <div className="h-full w-full flex items-center justify-center">
-                  <Code className="text-street-neon h-10 w-10" />
-                </div>
-              </div>
-              
-              {/* Rotating arrow */}
-              <div className="absolute bottom-20 right-0 w-16 h-16 glass rounded-full p-1 animate-spin-slow" style={{ animationDuration: '8s' }}>
-                <div className="h-full w-full bg-street-orange/20 rounded-full flex items-center justify-center">
-                  <RotateCcw className="text-street-orange h-8 w-8" />
-                </div>
-              </div>
-              
-              {/* Hexagon */}
-              <div className="absolute bottom-40 left-0 w-20 h-20 glass-dark p-1 animate-float-rotate" style={{ animationDuration: '10s' }}>
-                <div className="h-full w-full flex items-center justify-center">
-                  <Hexagon className="text-street-purple h-12 w-12" />
-                </div>
-              </div>
-              
-              {/* Animated terminal window */}
-              <div className="absolute top-0 left-16 w-56 h-32 glass-dark rounded-lg p-1 -rotate-3 animate-float" style={{ animationDelay: '1s' }}>
+            </div>
+            
+            {/* Animated terminal window - Upper left */}
+            <div className="col-span-3 row-span-2 col-start-1 row-start-1">
+              <div className="w-56 h-32 glass-dark rounded-lg p-1 -rotate-3 animate-float" style={{ animationDelay: '1s' }}>
                 <div className="h-full w-full bg-street-dark/80 rounded-lg overflow-hidden">
                   <div className="h-5 w-full bg-black/40 flex items-center px-2">
                     <div className="w-2 h-2 bg-red-500 rounded-full mr-1"></div>
@@ -214,16 +196,56 @@ const HeroSection: React.FC = () => {
                   </div>
                 </div>
               </div>
-              
-              {/* Colorful blocks */}
-              <div className="absolute bottom-0 left-32 flex space-x-3">
+            </div>
+            
+            {/* Spinning code block - Top right */}
+            <div className="col-span-2 row-span-2 col-start-5 row-start-1">
+              <div className="w-24 h-24 glass-dark rounded-lg p-1 animate-spin-slow" style={{ animationDuration: '15s' }}>
+                <div className="h-full w-full flex items-center justify-center">
+                  <Code className="text-street-neon h-10 w-10" />
+                </div>
+              </div>
+            </div>
+            
+            {/* Colorful blocks - Bottom left */}
+            <div className="col-span-2 row-span-1 col-start-1 row-start-6">
+              <div className="flex space-x-3">
                 <div className="w-10 h-10 bg-street-purple/40 rounded-lg animate-bounce" style={{ animationDelay: '0s', animationDuration: '2s' }}></div>
                 <div className="w-10 h-10 bg-street-orange/40 rounded-lg animate-bounce" style={{ animationDelay: '0.2s', animationDuration: '2.2s' }}></div>
                 <div className="w-10 h-10 bg-street-neon/40 rounded-lg animate-bounce" style={{ animationDelay: '0.4s', animationDuration: '1.8s' }}></div>
               </div>
-              
-              {/* Equalizer bars */}
-              <div className="absolute top-1/4 right-12 flex space-x-1 h-16 items-end">
+            </div>
+            
+            {/* Rotating arrow - Bottom right */}
+            <div className="col-span-2 row-span-2 col-start-5 row-start-5">
+              <div className="w-16 h-16 glass rounded-full p-1 animate-spin-slow" style={{ animationDuration: '8s' }}>
+                <div className="h-full w-full bg-street-orange/20 rounded-full flex items-center justify-center">
+                  <RotateCcw className="text-street-orange h-8 w-8" />
+                </div>
+              </div>
+            </div>
+            
+            {/* Hexagon - Middle left */}
+            <div className="col-span-2 row-span-2 col-start-1 row-start-4">
+              <div className="w-20 h-20 glass-dark p-1 animate-float-rotate" style={{ animationDuration: '10s' }}>
+                <div className="h-full w-full flex items-center justify-center">
+                  <Hexagon className="text-street-purple h-12 w-12" />
+                </div>
+              </div>
+            </div>
+            
+            {/* New element: Triangle - Middle right */}
+            <div className="col-span-2 row-span-2 col-start-5 row-start-3">
+              <div className="w-16 h-16 glass-yellow p-1 animate-street-skew">
+                <div className="h-full w-full flex items-center justify-center">
+                  <Triangle className="text-street-yellow h-10 w-10" />
+                </div>
+              </div>
+            </div>
+            
+            {/* New element: Equalizer bars */}
+            <div className="col-span-2 row-span-2 col-start-3 row-start-5">
+              <div className="flex space-x-1 h-16 items-end">
                 {Array.from({ length: 8 }).map((_, i) => (
                   <div 
                     key={i} 
@@ -235,6 +257,42 @@ const HeroSection: React.FC = () => {
                     }}
                   ></div>
                 ))}
+              </div>
+            </div>
+            
+            {/* New element: Moving star */}
+            <div className="col-span-1 row-span-1 col-start-3 row-start-1">
+              <div className="w-10 h-10 glass-neon rounded-full animate-float" style={{ animationDuration: '5s' }}>
+                <div className="h-full w-full flex items-center justify-center">
+                  <Star className="text-street-yellow h-6 w-6" />
+                </div>
+              </div>
+            </div>
+            
+            {/* New element: Moving circle */}
+            <div className="col-span-1 row-span-1 col-start-3 row-start-2">
+              <div className="w-12 h-12 glass-red rounded-full animate-pulse-slow" style={{ animationDuration: '4s' }}>
+                <div className="h-full w-full flex items-center justify-center">
+                  <Circle className="text-street-red h-8 w-8" />
+                </div>
+              </div>
+            </div>
+
+            {/* New element: Atom */}
+            <div className="col-span-1 row-span-2 col-start-4 row-start-4">
+              <div className="w-14 h-14 glass rounded-full animate-spin-slow" style={{ animationDuration: '12s' }}>
+                <div className="h-full w-full flex items-center justify-center">
+                  <AtomIcon className="text-street-cyan h-8 w-8" />
+                </div>
+              </div>
+            </div>
+            
+            {/* New element: Code snippet with syntax highlighting */}
+            <div className="col-span-2 row-span-1 col-start-3 row-start-3">
+              <div className="glass-dark p-2 rounded-lg w-36 overflow-hidden">
+                <div className="font-mono text-xs">
+                  <span className="text-street-orange">const</span> <span className="text-street-cyan">design</span> <span className="text-white">=</span> <span className="text-street-neon">'street'</span>
+                </div>
               </div>
             </div>
           </div>
