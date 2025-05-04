@@ -195,7 +195,7 @@ const HeroSection: React.FC = () => {
               {/* Code snippet */}
               <div className="glass-dark p-2 rounded-lg w-44 overflow-hidden">
                 <div className="font-mono text-xs">
-                  <span className="text-street-orange">let</span> <span className="text-street-cyan">stack</span> <span className="text-white">=</span> <span className="text-street-neon">'Horizon'</span>
+                  <span className="text-street-orange">let</span> <span className="text-street-cyan">stack</span> <span className="text-white">=</span> <span className="text-street-neon">&apos;Horizon&apos;</span>
                 </div>
               </div>
             </div>
@@ -264,7 +264,7 @@ const HeroSection: React.FC = () => {
               <div className="col-span-3 col-start-8 row-span-1 row-start-1">
                 <div className="glass-dark p-2 rounded-lg w-36 overflow-hidden">
                   <div className="font-mono text-xs">
-                    <span className="text-street-orange">let</span> <span className="text-street-cyan">stack</span> <span className="text-white">=</span> <span className="text-street-neon">'Horizon'</span>
+                    <span className="text-street-orange">let</span> <span className="text-street-cyan">stack</span> <span className="text-white">=</span> <span className="text-street-neon">&apos;Horizon&apos;</span>
                   </div>
                 </div>
               </div>
@@ -335,8 +335,8 @@ const HeroSection: React.FC = () => {
               <div className="col-span-3 col-start-5 row-span-1 row-start-10">
                 <div className="glass-dark p-2 rounded-lg overflow-hidden">
                   <div className="font-mono text-xs">
-                    <span className="text-street-purple">function</span> <span className="text-street-cyan">createMagic</span><span className="text-white">() { </span>
-                    <span className="text-street-orange">return</span> <span className="text-street-neon">"✨"</span><span className="text-white"> }</span>
+                    <span className="text-street-purple">function</span> <span className="text-street-cyan">createMagic</span><span className="text-white">() {"{"} </span>
+                    <span className="text-street-orange">return</span> <span className="text-street-neon">&quot;✨&quot;</span><span className="text-white"> {"}"}</span>
                   </div>
                 </div>
               </div>
