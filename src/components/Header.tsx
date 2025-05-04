@@ -43,7 +43,7 @@ const Header: React.FC = () => {
         <div className="hidden md:flex items-center gap-8">
           <nav className="flex space-x-6">
             {[
-              { name: "Servizi", id: "services" }, 
+              { name: "Sviluppo & Progettazione", id: "services" }, 
               { name: "Features", id: "features" }, 
               { name: "Progetti", id: "projects" }, 
               { name: "Contatti", id: "contact" }
@@ -84,7 +84,7 @@ const Header: React.FC = () => {
         <div className="md:hidden glass-dark absolute top-full left-0 w-full">
           <div className="container py-4 flex flex-col space-y-4">
             {[
-              { name: "Servizi", id: "services" }, 
+              { name: "Sviluppo & Progettazione", id: "services" }, 
               { name: "Features", id: "features" }, 
               { name: "Progetti", id: "projects" }, 
               { name: "Contatti", id: "contact" }
