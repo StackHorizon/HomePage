@@ -57,7 +57,7 @@ const CookieBanner: React.FC = () => {
                         Utilizziamo i cookie per migliorare la tua esperienza sul nostro sito.
                         Alcuni sono essenziali, altri ci aiutano ad analizzare come utilizzi il sito.{" "}
                         <a
-                            href="/privacy"
+                            href="./privacy"
                             className="text-street-purple hover:text-street-neon underline transition-colors"
                         >
                             Privacy policy
