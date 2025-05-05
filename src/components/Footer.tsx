@@ -89,12 +89,7 @@ const Footer: React.FC = () => {
                             ))}
                         </ul>
 
-                        {/* Hiring badge */}
-                        <div className="mt-4 inline-flex items-center">
-              <span className="text-xs bg-street-neon/20 text-street-neon px-2 py-0.5 rounded-full animate-pulse">
-                Stiamo assumendo!
-              </span>
-                        </div>
+                        
                     </div>
 
                     <div>
@@ -127,7 +122,7 @@ const Footer: React.FC = () => {
                     className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-sm text-gray-400 relative">
                         <span className="absolute -left-4 top-0 text-street-orange">©</span>
-                        {currentYear} Stack Horizon. Tutti i diritti sono troppo street per essere violati.
+                        {currentYear} Stack Horizon. Tutti i diritti sono riservati.
                     </p>
                     <div className="flex space-x-6">
                         {["Privacy", "Termini", "Cookies", "FAQ"].map((link) => (
@@ -144,12 +139,6 @@ const Footer: React.FC = () => {
                 {/* Decorative line */}
                 <div
                     className="mt-10 h-px w-full bg-gradient-to-r from-transparent via-street-purple/30 to-transparent"></div>
-
-                {/* Credits line */}
-                <div className="mt-6 text-center text-xs text-gray-500">
-                    Designed with <span className="text-street-red">♥</span> in Italia | Made in the <span
-                    className="text-street-neon">Digital Streets</span>
-                </div>
             </div>
         </footer>
     );
