@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
             </div>
 
             <div className="container">
-                <div className="grid md:grid-cols-4 gap-12">
+                <div className="grid md:grid-cols-3 gap-12">
                     <div className="space-y-4">
                         <a href="/" className="flex items-center gap-2 group">
                             <div
@@ -52,68 +52,82 @@ const Footer: React.FC = () => {
                             <Star className="inline-block ml-2 h-3 w-3 text-street-purple"/>
                         </h4>
                         <ul className="space-y-2 text-gray-400">
-                            {["Sviluppo Web", "Cloud Hosting", "API Integration", "Domini", "Supporto 24/7"].map((item) => (
-                                <li key={item} className="transform hover:translate-x-2 transition-transform">
-                                    <a href="#" className="hover:text-white transition-colors flex items-center gap-1">
-                                        <span className="w-1 h-1 rounded-full bg-street-purple/50"></span>
-                                        {item}
-                                    </a>
-                                </li>
-                            ))}
+                            <li className="transform hover:translate-x-2 transition-transform">
+                                <a href="#services"
+                                   className="hover:text-white transition-colors flex items-center gap-1">
+                                    <span className="w-1 h-1 rounded-full bg-street-purple/50"></span>
+                                    Servizi
+                                </a>
+                            </li>
+                            <li className="transform hover:translate-x-2 transition-transform">
+                                <a href="#features"
+                                   className="hover:text-white transition-colors flex items-center gap-1">
+                                    <span className="w-1 h-1 rounded-full bg-street-purple/50"></span>
+                                    Features
+                                </a>
+                            </li>
+                            <li className="transform hover:translate-x-2 transition-transform">
+                                <a href="#projects"
+                                   className="hover:text-white transition-colors flex items-center gap-1">
+                                    <span className="w-1 h-1 rounded-full bg-street-purple/50"></span>
+                                    Progetti
+                                </a>
+                            </li>
+                            <li className="transform hover:translate-x-2 transition-transform">
+                                <a href="#contact"
+                                   className="hover:text-white transition-colors flex items-center gap-1">
+                                    <span className="w-1 h-1 rounded-full bg-street-purple/50"></span>
+                                    Contatti
+                                </a>
+                            </li>
                         </ul>
 
                         {/* New feature badge */}
                         <div className="mt-4 inline-flex items-center">
-              <span
-                  className="text-xs bg-street-orange/20 text-street-orange px-2 py-0.5 rounded-full flex items-center gap-1">
-                <Zap className="h-3 w-3"/>
-                NEW
-              </span>
+                                            <span
+                                                className="text-xs bg-street-orange/20 text-street-orange px-2 py-0.5 rounded-full flex items-center gap-1">
+                                                <Zap className="h-3 w-3"/>
+                                                NEW
+                                            </span>
                         </div>
                     </div>
 
                     <div>
                         <h4 className="font-bold text-lg mb-4 relative inline-block">
-                            Crew
-                            <span className="absolute -bottom-1 left-0 w-1/2 h-0.5 bg-street-orange"></span>
-                            <Star className="inline-block ml-2 h-3 w-3 text-street-orange"/>
-                        </h4>
-                        <ul className="space-y-2 text-gray-400">
-                            {["Chi Siamo", "Il Team", "Il Blog", "News", "Contatti"].map((item) => (
-                                <li key={item} className="transform hover:translate-x-2 transition-transform">
-                                    <a href="#" className="hover:text-white transition-colors flex items-center gap-1">
-                                        <span className="w-1 h-1 rounded-full bg-street-orange/50"></span>
-                                        {item}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-
-                        
-                    </div>
-
-                    <div>
-                        <h4 className="font-bold text-lg mb-4 relative inline-block">
-                            Legal
+                            Info
                             <span className="absolute -bottom-1 left-0 w-1/2 h-0.5 bg-street-blue"></span>
                             <Star className="inline-block ml-2 h-3 w-3 text-street-blue"/>
                         </h4>
                         <ul className="space-y-2 text-gray-400">
-                            {["Privacy", "Cookies", "Termini", "Licenze", "Settings"].map((item) => (
-                                <li key={item} className="transform hover:translate-x-2 transition-transform">
-                                    <a href="#" className="hover:text-white transition-colors flex items-center gap-1">
-                                        <span className="w-1 h-1 rounded-full bg-street-blue/50"></span>
-                                        {item}
-                                    </a>
-                                </li>
-                            ))}
+                            <li className="transform hover:translate-x-2 transition-transform">
+                                <a href="/privacy"
+                                   className="hover:text-white transition-colors flex items-center gap-1">
+                                    <span className="w-1 h-1 rounded-full bg-street-blue/50"></span>
+                                    Privacy
+                                </a>
+                            </li>
+                            <li className="transform hover:translate-x-2 transition-transform">
+                                <a href="#contact"
+                                   className="hover:text-white transition-colors flex items-center gap-1">
+                                    <span className="w-1 h-1 rounded-full bg-street-blue/50"></span>
+                                    Contattaci
+                                </a>
+                            </li>
+                            <li className="transform hover:translate-x-2 transition-transform">
+                                <a href="mailto:stackhorizon@gmail.com"
+                                   className="hover:text-white transition-colors flex items-center gap-1">
+                                    <span className="w-1 h-1 rounded-full bg-street-blue/50"></span>
+                                    Email
+                                </a>
+                            </li>
                         </ul>
 
                         {/* Updated badge */}
                         <div className="mt-4 inline-flex items-center">
-              <span className="text-xs bg-street-blue/20 text-street-blue px-2 py-0.5 rounded-full">
-                Ultimo update: 05/2025
-              </span>
+                                            <span
+                                                className="text-xs bg-street-blue/20 text-street-blue px-2 py-0.5 rounded-full">
+                                                Ultimo update: 05/2025
+                                            </span>
                         </div>
                     </div>
                 </div>
@@ -125,14 +139,18 @@ const Footer: React.FC = () => {
                         {currentYear} Stack Horizon. Tutti i diritti sono riservati.
                     </p>
                     <div className="flex space-x-6">
-                        {["Privacy", "Termini", "Cookies", "FAQ"].map((link) => (
-                            <a key={link} href="#"
-                               className="text-gray-400 hover:text-white transition-colors text-sm relative group">
-                                {link}
-                                <span
-                                    className="absolute bottom-0 left-0 w-0 h-0.5 bg-street-purple group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        ))}
+                        <a href="/privacy"
+                           className="text-gray-400 hover:text-white transition-colors text-sm relative group">
+                            Privacy
+                            <span
+                                className="absolute bottom-0 left-0 w-0 h-0.5 bg-street-purple group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                        <a href="#contact"
+                           className="text-gray-400 hover:text-white transition-colors text-sm relative group">
+                            Contatti
+                            <span
+                                className="absolute bottom-0 left-0 w-0 h-0.5 bg-street-purple group-hover:w-full transition-all duration-300"></span>
+                        </a>
                     </div>
                 </div>
 

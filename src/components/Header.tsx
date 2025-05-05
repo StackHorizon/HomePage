@@ -50,10 +50,9 @@ const Header: React.FC = () => {
                 <div className="hidden md:flex items-center gap-8">
                     <nav className="flex space-x-6">
                         {[
-                            {name: "Sviluppo & Progettazione", id: "services"},
+                            {name: "Servizi", id: "services"},
                             {name: "Features", id: "features"},
                             {name: "Progetti", id: "projects"},
-                            {name: "Contatti", id: "contact"}
                         ].map((item, i) => (
                             <a
                                 key={item.name}
@@ -68,7 +67,11 @@ const Header: React.FC = () => {
                     </nav>
 
                     <Button
-                        className="bg-street-orange hover:bg-street-orange/80 transform hover:scale-105 transition-all duration-300 flex items-center gap-1 relative group overflow-hidden">
+                        className="bg-street-orange hover:bg-street-orange/80 transform hover:scale-105 transition-all duration-300 flex items-center gap-1 relative group overflow-hidden"
+                        onClick={() => {
+                            document.getElementById("contact")?.scrollIntoView({behavior: "smooth"});
+                        }}
+                    >
                         <span className="relative z-10">Inizia Ora</span>
                         <Zap className="h-4 w-4 relative z-10"/>
                         <span
@@ -117,7 +120,12 @@ const Header: React.FC = () => {
                         ))}
 
                         <Button
-                            className="bg-street-orange hover:bg-street-orange/80 w-full mt-4 flex items-center justify-center gap-2">
+                            className="bg-street-orange hover:bg-street-orange/80 w-full mt-4 flex items-center justify-center gap-2"
+                            onClick={() => {
+                                document.getElementById("contact")?.scrollIntoView({behavior: "smooth"});
+                                setIsMenuOpen(false);
+                            }}
+                        >
                             Inizia Ora
                             <Zap className="h-4 w-4"/>
                         </Button>

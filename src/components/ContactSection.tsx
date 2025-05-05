@@ -1,10 +1,58 @@
-import React from "react";
+import React, {useState, useRef} from "react";
 import {Button} from "@/components/ui/button";
 import {Input} from "@/components/ui/input";
 import {Textarea} from "@/components/ui/textarea";
-import {Sparkles, Zap, MapPin, Phone, Mail} from "lucide-react";
+import {Sparkles, Zap, MapPin, Phone, Mail, CheckCircle, AlertCircle} from "lucide-react";
+import emailjs from '@emailjs/browser';
 
 const ContactSection: React.FC = () => {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+    });
+    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+    const formRef = useRef<HTMLFormElement>(null);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const {name, value} = e.target;
+        setFormData(prev => ({...prev, [name]: value}));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        if (!formData.name || !formData.email || !formData.message) {
+            alert("Per favore, compila tutti i campi obbligatori.");
+            return;
+        }
+
+        setStatus("loading");
+
+        try {
+            // Sostituisci questi valori con i tuoi ID di EmailJS
+            await emailjs.sendForm(
+                'service_l6hdjnd',
+                'template_hrtljp4',
+                formRef.current!,
+                'vOWqTwzbW_lF_yKhN'
+            );
+
+            setStatus("success");
+            setFormData({name: "", email: "", subject: "", message: ""});
+
+            // Ripristina lo stato dopo 5 secondi
+            setTimeout(() => setStatus("idle"), 5000);
+        } catch (error) {
+            console.error("Errore nell'invio dell'email:", error);
+            setStatus("error");
+
+            // Ripristina lo stato dopo 5 secondi
+            setTimeout(() => setStatus("idle"), 5000);
+        }
+    };
+
     return (
         <section id="contact" className="py-20 relative">
             {/* Background elements */}
@@ -68,7 +116,7 @@ const ContactSection: React.FC = () => {
                             <p className="text-gray-300 max-w-lg">
                                 Pronto a portare la tua idea al <span
                                 className="text-street-neon">livello successivo</span>? Scrivici e scopri come possiamo
-                                aiutarti a realizzare i tuoi<span className="text-street-orange">sogni</span>.
+                                aiutarti a realizzare i tuoi<span className="text-street-orange"> sogni</span>.
                             </p>
                         </div>
 
@@ -81,7 +129,7 @@ const ContactSection: React.FC = () => {
                                 <div className="relative z-10">
                                     <Mail className="h-6 w-6 text-street-purple mb-3"/>
                                     <h3 className="text-xl font-bold mb-2">Email</h3>
-                                    <p className="text-street-purple">stackhorizon@gmail.com</p>
+                                    <p className="text-street-purple">stackhorizonmail@gmail.com</p>
                                 </div>
                                 <div
                                     className="absolute bottom-0 left-0 w-full h-1 bg-street-purple transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
@@ -134,7 +182,7 @@ const ContactSection: React.FC = () => {
                         <div className="absolute bottom-0 left-0 w-2 h-12 bg-street-red"></div>
                         <div className="absolute bottom-0 left-0 w-12 h-2 bg-street-red"></div>
 
-                        <form className="space-y-6 relative z-10">
+                        <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 relative z-10">
                             <div>
                                 <label htmlFor="name"
                                        className="block text-sm font-medium mb-1 flex items-center gap-1">
@@ -143,8 +191,12 @@ const ContactSection: React.FC = () => {
                                 </label>
                                 <Input
                                     id="name"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
                                     placeholder="Il tuo nome qui"
                                     className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-street-purple focus:ring-street-purple/50"
+                                    required
                                 />
                             </div>
 
@@ -156,9 +208,13 @@ const ContactSection: React.FC = () => {
                                 </label>
                                 <Input
                                     id="email"
+                                    name="email"
                                     type="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
                                     placeholder="email@esempio.it"
                                     className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-street-purple focus:ring-street-purple/50"
+                                    required
                                 />
                             </div>
 
@@ -170,6 +226,9 @@ const ContactSection: React.FC = () => {
                                 </label>
                                 <Input
                                     id="subject"
+                                    name="subject"
+                                    value={formData.subject}
+                                    onChange={handleChange}
                                     placeholder="L'argomento del messaggio"
                                     className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-street-purple focus:ring-street-purple/50"
                                 />
@@ -183,21 +242,44 @@ const ContactSection: React.FC = () => {
                                 </label>
                                 <Textarea
                                     id="message"
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
                                     rows={4}
-                                    placeholder="Spara qui la tua idea..."
+                                    placeholder="Racconta qui la tua idea..."
                                     className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-street-purple focus:ring-street-purple/50"
+                                    required
                                 />
                             </div>
 
                             <Button
+                                type="submit"
+                                disabled={status === "loading"}
                                 className="w-full bg-gradient-street hover:bg-street-purple/80 transform hover:translate-y-[-3px] transition-all relative group">
-                <span className="relative z-10 flex items-center gap-2">
-                  Mandaci il Messaggio
-                  <Zap className="h-4 w-4 group-hover:animate-pulse"/>
-                </span>
+    <span className="relative z-10 flex items-center gap-2">
+        {status === "loading" ? "Invio in corso..." : "Mandaci il Messaggio"}
+        {status !== "loading" && <Zap className="h-4 w-4 group-hover:animate-pulse"/>}
+    </span>
                                 <span
-                                    className="absolute inset-0 w-full h-full bg-gradient-to-r from-street-purple via-street-orange to-street-purple bg-[length:200%_100%] animate-gradient-x opacity-0 group-hover:opacity-80 transition-opacity"></span>
+                                    className="absolute inset-0 w-full h-full bg-gradient-to-r from-street-purple via-street-orange to-street-purple bg-[length:200%_100%] animate-gradient-x opacity-0 group-hover:opacity-80 transition-opacity rounded-md">
+    </span>
                             </Button>
+
+                            {status === "success" && (
+                                <div
+                                    className="text-center py-2 px-3 bg-green-500/20 border border-green-500/30 rounded-md flex items-center justify-center gap-2">
+                                    <CheckCircle className="h-4 w-4 text-green-400"/>
+                                    <span className="text-green-400">Messaggio inviato con successo!</span>
+                                </div>
+                            )}
+
+                            {status === "error" && (
+                                <div
+                                    className="text-center py-2 px-3 bg-red-500/20 border border-red-500/30 rounded-md flex items-center justify-center gap-2">
+                                    <AlertCircle className="h-4 w-4 text-red-400"/>
+                                    <span className="text-red-400">Errore nell'invio. Riprova più tardi.</span>
+                                </div>
+                            )}
 
                             <p className="text-center text-xs text-gray-400 flex items-center justify-center gap-1">
                                 <span className="w-10 h-px bg-white/10"></span>

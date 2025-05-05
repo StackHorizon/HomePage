@@ -120,11 +120,14 @@ const HeroSection: React.FC = () => {
                             <Zap className="h-4 w-4 text-street-yellow animate-pulse"/>
                         </p>
                         <h1 className="text-4xl sm:text-6xl font-bold leading-none opacity-0 animate-fade-in animate-item">
-                            <span className="text-gradient block whitespace-nowrap" style={{
-                                fontSize: 'clamp(2rem, 6vw, 7rem)',
-                                letterSpacing: '-1px',
-                                overflow: 'visible'
-                            }}>Stack Horizon</span>
+                           <span className="text-gradient block" style={{
+                               fontSize: 'clamp(0.5rem, 4.5vw, 6.5rem)',
+                               whiteSpace: 'nowrap',
+                               maxWidth: '100%',
+                               overflow: 'visible',
+                               position: 'relative',
+                               zIndex: 10
+                           }}>Stack Horizon</span>
                             <span className="text-xl sm:text-3xl md:text-4xl text-street-cyan/90 block mt-2">Sviluppo & Progettazione</span>
                             <span
                                 className="absolute -ml-8 text-5xl sm:text-6xl text-street-neon opacity-30 animate-pulse-slow">*</span>
@@ -136,19 +139,23 @@ const HeroSection: React.FC = () => {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in animate-item">
-                        <Button size="lg"
-                                className="bg-street-purple hover:bg-street-purple/80 text-white rounded-xl rotate-1 transform transition-transform hover:rotate-0 hover:scale-105 group relative overflow-hidden">
-                            <span
-                                className="absolute inset-0 w-full h-full bg-gradient-to-r from-street-purple via-street-neon to-street-purple bg-[length:200%_100%] animate-gradient-x opacity-50 group-hover:opacity-70"></span>
-                            <span className="relative z-10 flex items-center gap-2">
-                              Fai il Salto con Noi
-                              <Sparkles className="h-4 w-4 animate-pulse"/>
-                            </span>
-                        </Button>
-                        <Button size="lg" variant="outline"
-                                className="border-street-orange text-street-orange hover:bg-street-orange/10 rounded-xl -rotate-1 transform transition-transform hover:rotate-0">
-                            Guarda i nostri progetti
-                        </Button>
+                        <a href="#contact">
+                            <Button size="lg"
+                                    className="bg-street-purple hover:bg-street-purple/80 text-white rounded-xl rotate-1 transform transition-transform hover:rotate-0 hover:scale-105 group relative overflow-hidden">
+            <span
+                className="absolute inset-0 w-full h-full bg-gradient-to-r from-street-purple via-street-neon to-street-purple bg-[length:200%_100%] animate-gradient-x opacity-50 group-hover:opacity-70"></span>
+                                <span className="relative z-10 flex items-center gap-2">
+              Fai il Salto con Noi
+              <Sparkles className="h-4 w-4 animate-pulse"/>
+            </span>
+                            </Button>
+                        </a>
+                        <a href="#projects">
+                            <Button size="lg" variant="outline"
+                                    className="border-street-orange text-street-orange hover:bg-street-orange/10 rounded-xl -rotate-1 transform transition-transform hover:rotate-0">
+                                Guarda i nostri progetti
+                            </Button>
+                        </a>
                     </div>
 
                     <div
