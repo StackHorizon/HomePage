@@ -100,10 +100,9 @@ const Header: React.FC = () => {
                 }}>
                     <div className="container py-4 flex flex-col space-y-4">
                         {[
-                            {name: "Sviluppo & Progettazione", id: "services"},
+                            {name: "Servizi", id: "services"},
                             {name: "Features", id: "features"},
                             {name: "Progetti", id: "projects"},
-                            {name: "Contatti", id: "contact"}
                         ].map((item) => (
                             <a
                                 key={item.name}
@@ -129,19 +128,6 @@ const Header: React.FC = () => {
                             Inizia Ora
                             <Zap className="h-4 w-4"/>
                         </Button>
-
-                        {/* Social links */}
-                        <div className="flex items-center justify-center gap-3 pt-2 border-t border-white/10">
-                            {['IG', 'FB', 'TW'].map(social => (
-                                <a
-                                    key={social}
-                                    href="#"
-                                    className="w-8 h-8 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 transition-all hover:scale-110"
-                                >
-                                    {social}
-                                </a>
-                            ))}
-                        </div>
                     </div>
                 </div>
             )}
