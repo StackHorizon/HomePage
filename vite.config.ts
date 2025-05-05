@@ -9,5 +9,5 @@ export default defineConfig({
             '@': path.resolve(__dirname, './src'),
         },
     },
-    base: '/homepage/', // Aggiungi questa riga con il nome del tuo repository
+    base: '/HomePage/', // Aggiungi questa riga con il nome del tuo repository
 })
