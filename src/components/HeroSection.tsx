@@ -121,8 +121,9 @@ const HeroSection: React.FC = () => {
                         </p>
                         <h1 className="text-4xl sm:text-6xl font-bold leading-none opacity-0 animate-fade-in animate-item">
                             <span className="text-gradient block whitespace-nowrap" style={{
-                                fontSize: 'clamp(3rem, 7vw, 5.5rem)',
-                                letterSpacing: '-1px'
+                                fontSize: 'clamp(2rem, 6vw, 7rem)',
+                                letterSpacing: '-1px',
+                                overflow: 'visible'
                             }}>Stack Horizon</span>
                             <span className="text-xl sm:text-3xl md:text-4xl text-street-cyan/90 block mt-2">Sviluppo & Progettazione</span>
                             <span
