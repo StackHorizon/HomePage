@@ -90,7 +90,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 <Button asChild variant="ghost"
                         className="text-street-purple hover:bg-street-purple/10 flex items-center gap-2 group relative">
                     <a href={link} target="_blank" rel="noopener noreferrer" className="z-10">
-                        Da un'occhiata al Progetto
+                        Esplora il progetto
                         <ExternalLink
                             className="h-4 w-4 ml-1 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"/>
                     </a>
@@ -114,36 +114,44 @@ const ProjectsSection: React.FC = () => {
         {
             title: "AI Animation",
             description: "Una applicazione pratica ad algoritmi di AI per lo sviluppo video, utilizzato al Comicon",
-            imageSrc: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+            imageSrc: "https://ibb.co/qYbPtDj8",
             technologies: ["PyTorch", "Python"],
             featured: true,
             category: "AI project",
-            link: "#"
+            link: "https://github.com/StackHorizon/AiProject"
         },
         {
             title: "Var magicBox Project",
-            description: "Un potente mezzo, plug and play, per la creazione del VAR in piccola scala",
-            imageSrc: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+            description: "Un potente mezzo, plug and play, per la creazione del VAR in piccola scala. Rendi i tuoi tornei professionali!",
+            imageSrc: "https://i.ibb.co/F4GjSh31/Copertina-Var-Project.png",
             technologies: ["Node.js", "OpenCV.js", "Fluent-ffmpeg"],
             category: "Sport",
-            link: "#"
+            link: "https://github.com/StackHorizon/VAR_Project"
         },
         {
             title: "YANSA",
             description: "Piattaforma social per condivisione di appunti, la cultura non è mai stata così libera",
-            imageSrc: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+            imageSrc: "https://i.ibb.co/Kpc4vGtp/Copertina-Yansa.png",
             technologies: ["Node.js", "Maria DB", "EditorJs", "Express"],
-            featured: true,
+            featured: false,
             category: "Social",
-            link: "#"
+            link: "https://github.com/StackHorizon/YANSA-Project"
         },
         {
             title: "GitChat",
             description: "Social Web per programmatori: parla con il tuo team, programma e integra github in una unica piattaforma",
-            imageSrc: "https://images.unsplash.com/photo-1552346154-21d32810aba3",
+            imageSrc: "https://i.ibb.co/jPCSgS5Y/Copertina-Git-Chat.png",
             technologies: ["Node.js", "Socket.io", "MariaDB", "GSAP", "Bootstrap"],
             category: "Social",
-            link: "#"
+            link: "https://github.com/StackHorizon/GitChat-Project"
+        },
+        {
+            title: "Tap System",
+            description: "Sito di presentazione per attività locale: moderno e build in con Astro. Per ogni tipo di attività uno stile, una idea",
+            imageSrc: "",
+            technologies: ["Astro", "TileWind", "Web Marketing"],
+            category: "Site Web",
+            link: "https://tapsystemriparazionesostituzionetapparellemilano.it/"
         },
     ];
 
@@ -223,11 +231,15 @@ const ProjectsSection: React.FC = () => {
                 </div>
 
                 <div className="mt-12 text-center opacity-0 animate-fade-in" style={{animationDelay: "0.4s"}}>
-                    <Button size="lg"
-                            className="bg-street-purple hover:bg-street-purple/80 text-white transform rotate-1 hover:rotate-0 hover:scale-105 transition-all group">
-                        <span className="relative z-10">Visualizza Tutti i Progetti</span>
-                        <span
-                            className="absolute inset-0 bg-gradient-to-r from-street-purple to-street-pink opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-md"></span>
+                    <Button
+                        asChild
+                        size="lg"
+                        className="bg-street-purple hover:bg-street-purple/80 text-white transform rotate-1 hover:rotate-0 hover:scale-105 transition-all group">
+                        <a href="https://github.com/StackHorizon" target="_blank" rel="noopener noreferrer">
+                            <span className="relative z-10">Visualizza Tutti i Progetti</span>
+                            <span
+                                className="absolute inset-0 bg-gradient-to-r from-street-purple to-street-pink opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-md"></span>
+                        </a>
                     </Button>
                 </div>
 

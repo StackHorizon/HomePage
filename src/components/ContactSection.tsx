@@ -126,11 +126,16 @@ const ContactSection: React.FC = () => {
                                 className="glass p-6 rounded-xl hover:bg-white/20 transition-colors transform rotate-1 hover:rotate-0 hover:translate-y-[-5px] group relative overflow-hidden">
                                 <div
                                     className="absolute inset-0 bg-gradient-to-br from-street-purple/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                                <div className="relative z-10">
-                                    <Mail className="h-6 w-6 text-street-purple mb-3"/>
-                                    <h3 className="text-xl font-bold mb-2">Email</h3>
-                                    <p className="text-street-purple">stackhorizonmail@gmail.com</p>
-                                </div>
+                               <div className="relative z-10">
+                                   <a
+                                     href="mailto:stackhorizonmail@gmail.com"
+                                     className="block cursor-pointer transition-colors hover:text-street-purple"
+                                   >
+                                       <Mail className="h-6 w-6 text-street-purple mb-3"/>
+                                       <h3 className="text-xl font-bold mb-2">Email</h3>
+                                       <p className="text-street-purple">stackhorizonmail@gmail.com</p>
+                                   </a>
+                               </div>
                                 <div
                                     className="absolute bottom-0 left-0 w-full h-1 bg-street-purple transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
                             </div>
@@ -140,9 +145,14 @@ const ContactSection: React.FC = () => {
                                 <div
                                     className="absolute inset-0 bg-gradient-to-br from-street-orange/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                 <div className="relative z-10">
-                                    <Phone className="h-6 w-6 text-street-orange mb-3"/>
-                                    <h3 className="text-xl font-bold mb-2">Telefono</h3>
-                                    <p className="text-street-orange">+39 347 656 0392</p>
+                                    <a
+                                        href="tel:+393476560392"
+                                        className="block cursor-pointer transition-colors hover:text-street-orange"
+                                    >
+                                        <Phone className="h-6 w-6 text-street-orange mb-3"/>
+                                        <h3 className="text-xl font-bold mb-2">Telefono</h3>
+                                        <p className="text-street-orange">+39 347 656 0392</p>
+                                    </a>
                                 </div>
                                 <div
                                     className="absolute bottom-0 left-0 w-full h-1 bg-street-orange transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>

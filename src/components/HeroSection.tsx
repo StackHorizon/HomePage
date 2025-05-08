@@ -283,7 +283,7 @@ const HeroSection: React.FC = () => {
             {/* Scroll indicator - Visible on all devices */}
             <div
                 className="flex absolute bottom-10 left-1/2 transform -translate-x-1/2 flex-col items-center">
-                <span className="text-sm text-gray-400 mb-2">Scendi Giù</span>
+                <span className="text-sm text-gray-400 mb-2">Continua ad esplorare</span>
                 <div className="w-0.5 h-10 bg-gradient-to-b from-street-purple to-transparent"></div>
                 <div
                     className="w-4 h-4 border-b-2 border-r-2 border-street-purple transform rotate-45 opacity-60 animate-bounce"></div>

@@ -102,6 +102,11 @@ const Footer: React.FC = () => {
                         <ul className="space-y-2 text-gray-400">
                             <li className="transform hover:translate-x-2 transition-transform">
                                 <Link to="/privacy"
+                                      onClick={() => {
+                                          setTimeout(() => {
+                                              window.scrollTo(0, 0);
+                                          }, 100);
+                                      }}
                                       className="hover:text-white transition-colors flex items-center gap-1">
                                     <span className="w-1 h-1 rounded-full bg-street-blue/50"></span>
                                     Privacy
@@ -140,8 +145,15 @@ const Footer: React.FC = () => {
                         {currentYear} Stack Horizon. Tutti i diritti sono riservati.
                     </p>
                     <div className="flex space-x-6">
-                        <Link to="/privacy"
-                              className="text-gray-400 hover:text-white transition-colors text-sm relative group">
+                        <Link
+                            to="/privacy"
+                            className="text-gray-400 hover:text-white transition-colors text-sm relative group"
+                            onClick={() => {
+                                setTimeout(() => {
+                                    window.scrollTo(0, 0);
+                                }, 100);
+                            }}
+                        >
                             Privacy
                             <span
                                 className="absolute bottom-0 left-0 w-0 h-0.5 bg-street-purple group-hover:w-full transition-all duration-300"></span>
