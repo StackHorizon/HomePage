@@ -100,7 +100,7 @@ const Footer: React.FC = () => {
                         </h4>
                         <ul className="space-y-2 text-gray-400">
                             <li className="transform hover:translate-x-2 transition-transform">
-                                <a href="./privacy"
+                                <a href="/privacy"
                                    className="hover:text-white transition-colors flex items-center gap-1">
                                     <span className="w-1 h-1 rounded-full bg-street-blue/50"></span>
                                     Privacy
@@ -139,7 +139,7 @@ const Footer: React.FC = () => {
                         {currentYear} Stack Horizon. Tutti i diritti sono riservati.
                     </p>
                     <div className="flex space-x-6">
-                        <a href="./privacy"
+                        <a href="/privacy"
                            className="text-gray-400 hover:text-white transition-colors text-sm relative group">
                             Privacy
                             <span
