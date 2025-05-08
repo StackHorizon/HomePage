@@ -2,6 +2,7 @@ import React from "react";
 import {Card} from "@/components/ui/card";
 import {Button} from "@/components/ui/button";
 import {ExternalLink, Star, Tag, Flame, Sparkles} from "lucide-react";
+import {Building2, Cookie, Shield} from "lucide-react";
 
 interface ProjectCardProps {
     title: string;
@@ -108,13 +109,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </Card>
     );
 };
-
 const ProjectsSection: React.FC = () => {
     const projects = [
         {
             title: "AI Animation",
             description: "Una applicazione pratica ad algoritmi di AI per lo sviluppo video, utilizzato al Comicon",
-            imageSrc: "https://ibb.co/qYbPtDj8",
+            imageSrc: "https://i.ibb.co/qM4NwgJv/Copertina-Ai.png",
             technologies: ["PyTorch", "Python"],
             featured: true,
             category: "AI project",
@@ -148,7 +148,7 @@ const ProjectsSection: React.FC = () => {
         {
             title: "Tap System",
             description: "Sito di presentazione per attività locale: moderno e build in con Astro. Per ogni tipo di attività uno stile, una idea",
-            imageSrc: "",
+            imageSrc: "https://i.ibb.co/ynjSmycV/Copertina-Tap-System.png",
             technologies: ["Astro", "TileWind", "Web Marketing"],
             category: "Site Web",
             link: "https://tapsystemriparazionesostituzionetapparellemilano.it/"
