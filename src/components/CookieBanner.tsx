@@ -3,7 +3,6 @@ import React from "react";
 import CookieConsent from "react-cookie-consent";
 import {Button} from "@/components/ui/button";
 import {Sparkles, Shield, Cookie} from "lucide-react";
-import {Link} from "react-router-dom"; // Aggiungi questa importazione
 
 const CookieBanner: React.FC = () => {
     return (
@@ -57,12 +56,12 @@ const CookieBanner: React.FC = () => {
                     <p className="text-sm text-gray-300">
                         Utilizziamo i cookie per migliorare la tua esperienza sul nostro sito.
                         Alcuni sono essenziali, altri ci aiutano ad analizzare come utilizzi il sito.{" "}
-                        <Link
-                            to="/privacy"
+                        <a
+                            href="./privacy"
                             className="text-street-purple hover:text-street-neon underline transition-colors"
                         >
                             Privacy policy
-                        </Link>
+                        </a>
                     </p>
                 </div>
             </div>
