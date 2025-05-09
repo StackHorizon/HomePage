@@ -71,7 +71,7 @@ const Privacy: React.FC = () => {
                         <p>
                             Per qualsiasi domanda o chiarimento riguardo alla nostra Privacy Policy, contattaci a:
                             <a href="mailto:stackhorizonmail@gmail.com"
-                               className="text-street-purple ml-1">stackhorizon@gmail.com</a>
+                               className="text-street-purple ml-1">stackhorizonmail@gmail.com</a>
                         </p>
                     </div>
                 </div>
