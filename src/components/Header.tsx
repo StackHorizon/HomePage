@@ -36,8 +36,8 @@ const Header: React.FC = () => {
             <div className="container flex items-center justify-between">
                 <a href="/" className="flex items-center gap-2 group">
                     <div
-                        className="bg-street-purple rounded-lg p-2 transition-all duration-300 group-hover:rotate-12 group-hover:scale-110 relative">
-                        <Building2 className="h-6 w-6"/>
+                        className="bg-[#0e1118] rounded-lg p-2 transition-all duration-300 group-hover:rotate-12 group-hover:scale-110 relative">
+                        <img src="/LogoStack.png" alt="Logo Stack" className="h-8 w-8"/>
                         <div
                             className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-street-neon animate-pulse"></div>
                     </div>

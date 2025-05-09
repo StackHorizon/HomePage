@@ -27,8 +27,8 @@ const Footer: React.FC = () => {
                     <div className="space-y-4">
                         <a href="/" className="flex items-center gap-2 group">
                             <div
-                                className="bg-street-purple rounded-lg p-1.5 transition-all duration-300 group-hover:rotate-12 group-hover:scale-110 relative">
-                                <Building2 className="h-5 w-5"/>
+                                className="bg-[#0e1118] rounded-lg p-1.5 transition-all duration-300 group-hover:rotate-12 group-hover:scale-110 relative">
+                                <img src="/LogoStack.png" alt="Logo Stack" className="h-8 w-8"/>
                                 <span
                                     className="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-street-neon"></span>
                             </div>
